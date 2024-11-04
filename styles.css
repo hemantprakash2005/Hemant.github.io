@@ -4,7 +4,6 @@ body {
     padding: 0;
     background: linear-gradient(to bottom, #ffc6c6, #082062);
     height: 100%;
-    margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -30,33 +29,50 @@ body {
 .right-column {
     padding: 20px;
 }
+
 .box {
     width: auto;
-    padding: 20px; /* Adjust padding as needed */
-    margin: 10px; /* Adjust margin as needed */
+    padding: 20px;
+    margin: 10px;
     background-color: #0c0e15;
     border: 1px solid #0c0e15;
     border-radius: 5px;
-   
 }
 
 .profile {
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Adjust height as needed */
-    background-color: white;
-    border-radius: 50%;
-    overflow: hidden;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid #ccc; /* Optional: Add border for styling */
-    position: relative;
-    transition: transform 0.3s;
+}
+
+.rotating-border {
+    width: 210px; /* Slightly larger than profile image */
+    height: 210px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
+    background-size: 200% 200%;
+    animation: rotateBorder 5s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .profile-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .profile:hover .profile-img {
@@ -74,7 +90,6 @@ body {
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s;
-    pointer-events: none; /* Allow hover on the image */
 }
 
 .profile:hover .profile-overlay {
@@ -120,8 +135,7 @@ h5 {
     color: #ffffff;
 }
 
-ul,
-ol {
+ul, ol {
     color: rgb(103, 219, 255);
 }
 
@@ -136,12 +150,13 @@ ol {
 #edu {
     color: rgb(103, 219, 255);
 }
-.title{
+
+.title {
     color: rgb(103, 219, 255);
-    display:flex;
+    display: flex;
     justify-content: left;
-    
 }
+
 .social-connection {
     margin-top: 3vh;
     display: flex;
@@ -153,8 +168,8 @@ ol {
     width: 50px;
     height: 50px;
     margin: 0 10px;
-    color: #d2edfc; /* You can style the color of the icons here */
-    font-size: 24px; /* Adjust the size of the icons as needed */
+    color: #d2edfc;
+    font-size: 24px;
     transition: transform 0.3s ease;
 }
 
@@ -162,28 +177,18 @@ ol {
     transform: scale(1.5);
 }
 
-/* Style for LinkedIn icon */
 .linkedin:hover {
-    color: #0077b5; /* Change to LinkedIn color on hover */
+    color: #0077b5;
 }
 
-/* Style for Instagram icon */
 .instagram:hover {
-    color: #bc2a8d; /* Change to Instagram color on hover */
+    color: #bc2a8d;
 }
 
-/* Style for GitHub icon */
 .github:hover {
-    color: #ffffff; /* Change to GitHub color on hover */
+    color: #ffffff;
 }
 
-.social-connection img {
-    width: 10px;
-    height: 10px;
-    margin: 10px;
-}
-
-/* Media Queries */
 @media only screen and (max-width: 600px) {
     .contact-card {
         margin: 50px auto;
