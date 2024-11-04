@@ -52,19 +52,19 @@ body {
     padding: 5px;
     border-radius: 50%;
     background: linear-gradient(45deg, #ff6f91, #ff9671, #ffc75f, #f9f871);
-    background-size: 200% 200%;
-    animation: rotateBorder 5s linear infinite;
+    background-size: 400% 400%;
+    animation: rotateBorder 6s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@keyframes rotateBorder {
+@keyframes rotateRBG {
     0% {
-        transform: rotate(0deg);
+        background-position: 0% 50%;
     }
     100% {
-        transform: rotate(360deg);
+       background-position: 100% 50%;
     }
 }
 
